@@ -44,12 +44,29 @@ T.get('search/tweets', params, getData );
 //UNFOLLOW 'following acounts' that don't follow me back
 
 
-
 //TWEET: 
 //  Use post() --> This will be key function for twit_BOT side of 
 //  the generative haiku machine
 //  T.post('statuses/update', {status: 'Hello World!'}, 
 //   function(err,data,response){console.log(data)} )
+
+
+// setInterval(postTweet(),1000*60*60);
+
+function postTweet() {
+  var tweet = {
+    status: 'Tweet posted by twitter bot'
+  }
+  function tweeting (err, data, response) {
+    if (err) {
+      console.log('Something went wrong:/');
+    }else{
+      console.log('Tweeted posted!');
+    }
+    console.log(data);
+  }
+  T.post('statuses/update', tweet, tweeting);
+}
 
 
 //RETWEET:
