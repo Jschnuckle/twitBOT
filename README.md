@@ -1,2 +1,2 @@
 # twitBOT
-Twitter Bot 
+Twitter Bot using 'twit' module by ttzele
