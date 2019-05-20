@@ -10,6 +10,10 @@ var Bot = module.exports = function(config) {
   this.twit = new Twit(config);
 };
 
+var stream = T.stream('user');
+
+// stream.on('mention', mentioned);
+
 //FIND followers
 //  Return list of user IDs that follow @JSchnucks
     console.log('Finding followers of JSchnucks')
@@ -41,9 +45,7 @@ params = {
 }
 T.get('search/tweets', params, getData );
 
-//UNFOLLOW 'following acounts' that don't follow me back
-
-
+  
 //TWEET: 
 //  Use post() --> This will be key function for twit_BOT side of 
 //  the generative haiku machine
@@ -53,9 +55,9 @@ T.get('search/tweets', params, getData );
 
 // setInterval(postTweet(),1000*60*60);
 
-function postTweet() {
+function postTweet(tweetTxt) {
   var tweet = {
-    status: 'Tweet posted by twitter bot'
+    status: tweetTxt
   }
   function tweeting (err, data, response) {
     if (err) {
@@ -68,15 +70,3 @@ function postTweet() {
   T.post('statuses/update', tweet, tweeting);
 }
 
-
-//RETWEET:
-
-
-//DELETE:
-
-
-
-
-//STREAM:
-//  Triggers an event when mentioned
-//  and has some sort of code that replys back 
