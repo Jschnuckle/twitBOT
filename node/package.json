@@ -1,0 +1,18 @@
+{
+  "name": "npm_demo",
+  "version": "1.0.0",
+  "description": "Demo for npm",
+  "main": "twit_bot.js",
+  "scripts": {
+    "start": "node twit_bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "yes"
+  ],
+  "author": "Jesse Schnuckle",
+  "license": "ISC",
+  "dependencies": {
+    "twit": "^2.2.11"
+  }
+}
